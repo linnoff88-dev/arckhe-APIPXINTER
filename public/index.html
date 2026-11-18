@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador Pix - Banco Inter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🏦 Simulador Pix - Banco Inter</h1>
+      <p class="subtitle">Ambiente de teste para cobranças Pix dinâmicas</p>
+    </header>
+
+    <!-- Tela 1: Formulário de Cadastro -->
+    <div id="screen-form" class="screen active">
+      <div class="card">
+        <h2>📝 Criar Nova Cobrança</h2>
+
+        <form id="cobranca-form">
+          <div class="form-group">
+            <label for="txid">ID da Transação (txid) *</label>
+            <input type="text" id="txid" required placeholder="Ex: pedido12345">
+            <small>Identificador único da cobrança</small>
+          </div>
+
+          <div class="form-group">
+            <label for="valor">Valor (R$) *</label>
+            <input type="number" id="valor" required min="0.01" step="0.01" placeholder="Ex: 29.90">
+          </div>
+
+          <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input type="text" id="descricao" placeholder="Ex: Pagamento de produto">
+          </div>
+
+          <div class="form-group">
+            <label for="nome_pagador">Nome do Pagador</label>
+            <input type="text" id="nome_pagador" placeholder="Ex: João Silva">
+          </div>
+
+          <div class="form-group">
+            <label for="cpf_cnpj">CPF/CNPJ</label>
+            <input type="text" id="cpf_cnpj" placeholder="Ex: 123.456.789-00">
+          </div>
+
+          <div class="form-group">
+            <label for="expiracao">Expiração (segundos)</label>
+            <input type="number" id="expiracao" value="3600" min="60" placeholder="3600">
+            <small>Tempo até a cobrança expirar (padrão: 1 hora)</small>
+          </div>
+
+          <div class="form-group">
+            <label for="link_final">Link Final (após pagamento)</label>
+            <input type="url" id="link_final" placeholder="https://exemplo.com/sucesso">
+            <small>URL que será liberada após o pagamento</small>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Criar Cobrança
+          </button>
+        </form>
+      </div>
+
+      <div class="info-box">
+        <h3>ℹ️ Informações</h3>
+        <ul>
+          <li>Este é um simulador de API Pix do Banco Inter</li>
+          <li>Nenhum pagamento real será processado</li>
+          <li>Use para testar fluxos de cobrança sem custos</li>
+          <li>O QR Code gerado é apenas para simulação</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tela 2: Exibição do QR Code -->
+    <div id="screen-qrcode" class="screen">
+      <div class="card">
+        <div class="status-badge status-ativa">
+          <span class="status-dot"></span>
+          <span id="status-text">ATIVA</span>
+        </div>
+
+        <h2>🎯 Cobrança Criada com Sucesso!</h2>
+
+        <div class="qr-section">
+          <img id="qr-image" src="" alt="QR Code" class="qr-code">
+
+          <div class="cobranca-info">
+            <p><strong>ID:</strong> <span id="display-txid"></span></p>
+            <p><strong>Valor:</strong> <span id="display-valor"></span></p>
+            <p><strong>Descrição:</strong> <span id="display-descricao"></span></p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>PIX Copia e Cola</label>
+          <div class="copy-box">
+            <input type="text" id="pix-copia-cola" readonly>
+            <button onclick="copiarPixCopiaECola()" class="btn-copy">📋 Copiar</button>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button onclick="simularPagamento()" class="btn btn-success" id="btn-pagar">
+            ✅ Simular Pagamento
+          </button>
+          <button onclick="voltarFormulario()" class="btn btn-secondary">
+            ← Nova Cobrança
+          </button>
+        </div>
+
+        <div id="loading-payment" class="loading" style="display: none;">
+          <div class="spinner"></div>
+          <p>Processando pagamento...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tela 3: Pagamento Confirmado -->
+    <div id="screen-success" class="screen">
+      <div class="card success-card">
+        <div class="success-icon">✅</div>
+        <h2>Pagamento Confirmado!</h2>
+
+        <div class="success-info">
+          <p><strong>ID da Transação:</strong> <span id="success-txid"></span></p>
+          <p><strong>Valor Pago:</strong> <span id="success-valor"></span></p>
+          <p><strong>Data:</strong> <span id="success-data"></span></p>
+        </div>
+
+        <div id="link-liberado" class="link-box" style="display: none;">
+          <h3>🎉 Acesso Liberado ao Portal!</h3>
+          <p class="portal-info">Clique no botão abaixo para acessar o portal Inema Club</p>
+          <a id="link-final-url" href="#" target="_blank" class="btn btn-portal">
+            🌐 Acessar Portal Inema Club →
+          </a>
+          <small class="portal-note">O acesso será registrado quando você clicar no link</small>
+        </div>
+
+        <button onclick="voltarFormulario()" class="btn btn-primary">
+          Criar Nova Cobrança
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <p>Simulador Pix - Banco Inter | Ambiente de Testes</p>
+      <p><small>Nenhuma transação real é processada</small></p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
