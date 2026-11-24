@@ -1,59 +1,59 @@
-# 🌐 Portal Inema Club e Sistema de Logs
+# ðŸŒ Portal ARCKHÉ Club e Sistema de Logs
 
-## ✅ Implementado
+## âœ… Implementado
 
-Sistema completo de redirecionamento para o portal **Inema Club** (https://inema.club/) com registro de pagamentos e acessos em arquivos.
+Sistema completo de redirecionamento para o portal **ARCKHÉ Club** (https://ARCKHÉ AI/) com registro de pagamentos e acessos em arquivos.
 
 ---
 
-## 🎯 Funcionalidades Implementadas
+## ðŸŽ¯ Funcionalidades Implementadas
 
-### 1. 🔗 Link do Portal Após Pagamento
+### 1. ðŸ”— Link do Portal ApÃ³s Pagamento
 
-Quando um pagamento é confirmado:
-- ✅ Aparece automaticamente o link para **https://inema.club/**
-- ✅ Botão destacado e atrativo com design profissional
-- ✅ Texto: "🎉 Acesso Liberado ao Portal! 🌐 Acessar Portal Inema Club"
+Quando um pagamento Ã© confirmado:
+- âœ… Aparece automaticamente o link para **https://ARCKHÉ AI/**
+- âœ… BotÃ£o destacado e atrativo com design profissional
+- âœ… Texto: "ðŸŽ‰ Acesso Liberado ao Portal! ðŸŒ Acessar Portal ARCKHÉ Club"
 
-### 2. 📝 Registro de Pagamentos
+### 2. ðŸ“ Registro de Pagamentos
 
-Todos os pagamentos são automaticamente salvos em arquivos:
+Todos os pagamentos sÃ£o automaticamente salvos em arquivos:
 
 **Arquivos criados:**
 - `logs/pagamentos.log` - JSON estruturado (para processamento)
-- `logs/pagamentos_legivel.txt` - Formato legível (para humanos)
+- `logs/pagamentos_legivel.txt` - Formato legÃ­vel (para humanos)
 
 **Dados registrados:**
-- 📅 Data e hora do pagamento
-- 💵 Valor pago
-- 🆔 ID da transação (txid)
-- 👤 Nome do pagador
-- 📄 CPF/CNPJ
-- 🔗 Link final liberado
-- ✅ Status do pagamento
+- ðŸ“… Data e hora do pagamento
+- ðŸ’µ Valor pago
+- ðŸ†” ID da transaÃ§Ã£o (txid)
+- ðŸ‘¤ Nome do pagador
+- ðŸ“„ CPF/CNPJ
+- ðŸ”— Link final liberado
+- âœ… Status do pagamento
 
-### 3. 🌐 Registro de Acessos ao Portal
+### 3. ðŸŒ Registro de Acessos ao Portal
 
-Quando o usuário clica no link do portal:
-- ✅ Acesso é registrado antes de abrir o link
-- ✅ Portal abre em nova aba automaticamente
-- ✅ Notificação visual "Abrindo portal..."
+Quando o usuÃ¡rio clica no link do portal:
+- âœ… Acesso Ã© registrado antes de abrir o link
+- âœ… Portal abre em nova aba automaticamente
+- âœ… NotificaÃ§Ã£o visual "Abrindo portal..."
 
 **Arquivos criados:**
 - `logs/acessos_portal.log` - JSON estruturado
-- `logs/acessos_portal_legivel.txt` - Formato legível
+- `logs/acessos_portal_legivel.txt` - Formato legÃ­vel
 
 **Dados registrados:**
-- 📅 Data e hora do acesso
-- 🆔 ID da transação
-- 💵 Valor pago
-- 🔗 URL do portal (https://inema.club/)
-- 🌍 Endereço IP do usuário
-- 💻 User Agent (navegador/dispositivo)
+- ðŸ“… Data e hora do acesso
+- ðŸ†” ID da transaÃ§Ã£o
+- ðŸ’µ Valor pago
+- ðŸ”— URL do portal (https://ARCKHÉ AI/)
+- ðŸŒ EndereÃ§o IP do usuÃ¡rio
+- ðŸ’» User Agent (navegador/dispositivo)
 
 ---
 
-## 📊 Novos Endpoints da API
+## ðŸ“Š Novos Endpoints da API
 
 ### 1. Registrar Acesso ao Portal
 
@@ -71,7 +71,7 @@ Content-Type: application/json
 {
   "success": true,
   "message": "Acesso ao portal registrado",
-  "portal_url": "https://inema.club/"
+  "portal_url": "https://ARCKHÉ AI/"
 }
 ```
 
@@ -94,7 +94,7 @@ GET /internal/logs/payments?limit=50
       "nome_pagador": "Maria da Silva",
       "cpf_cnpj": "98765432100",
       "paid_at": "2025-11-12T11:20:58.000Z",
-      "link_final": "https://inema.club/"
+      "link_final": "https://ARCKHÉ AI/"
     }
   ]
 }
@@ -116,7 +116,7 @@ GET /internal/logs/accesses?limit=50
       "tipo": "ACESSO_PORTAL",
       "txid": "testeportal001",
       "valor": "49.90",
-      "portal_url": "https://inema.club/",
+      "portal_url": "https://ARCKHÉ AI/",
       "ip": "::1",
       "user_agent": "Mozilla/5.0..."
     }
@@ -124,7 +124,7 @@ GET /internal/logs/accesses?limit=50
 }
 ```
 
-### 4. Ver Estatísticas
+### 4. Ver EstatÃ­sticas
 
 ```bash
 GET /internal/statistics
@@ -144,77 +144,77 @@ GET /internal/statistics
 
 ---
 
-## 📁 Estrutura de Arquivos de Log
+## ðŸ“ Estrutura de Arquivos de Log
 
 ### Formato JSON (processamento automatizado)
 
 **`logs/pagamentos.log`:**
 ```json
-{"timestamp":"2025-11-12T11:20:58.961Z","tipo":"PAGAMENTO_CONFIRMADO","txid":"testeportal001","valor":"49.90","nome_pagador":"Maria da Silva","cpf_cnpj":"98765432100","paid_at":"2025-11-12T11:20:58.000Z","link_final":"https://inema.club/"}
+{"timestamp":"2025-11-12T11:20:58.961Z","tipo":"PAGAMENTO_CONFIRMADO","txid":"testeportal001","valor":"49.90","nome_pagador":"Maria da Silva","cpf_cnpj":"98765432100","paid_at":"2025-11-12T11:20:58.000Z","link_final":"https://ARCKHÉ AI/"}
 ```
 
 **`logs/acessos_portal.log`:**
 ```json
-{"timestamp":"2025-11-12T11:21:20.604Z","tipo":"ACESSO_PORTAL","txid":"testeportal001","valor":"49.90","portal_url":"https://inema.club/","ip":"::1","user_agent":"curl/8.5.0"}
+{"timestamp":"2025-11-12T11:21:20.604Z","tipo":"ACESSO_PORTAL","txid":"testeportal001","valor":"49.90","portal_url":"https://ARCKHÉ AI/","ip":"::1","user_agent":"curl/8.5.0"}
 ```
 
-### Formato Legível (visualização humana)
+### Formato LegÃ­vel (visualizaÃ§Ã£o humana)
 
 **`logs/pagamentos_legivel.txt`:**
 ```
-═══════════════════════════════════════════════════
-📅 Data/Hora: 12/11/2025, 08:20:58
-💵 Valor: R$ 49.90
-🆔 ID Transação: testeportal001
-👤 Pagador: Maria da Silva
-📄 CPF/CNPJ: 98765432100
-🔗 Link Final: https://inema.club/
-✅ Status: PAGO
-═══════════════════════════════════════════════════
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+ðŸ“… Data/Hora: 12/11/2025, 08:20:58
+ðŸ’µ Valor: R$ 49.90
+ðŸ†” ID TransaÃ§Ã£o: testeportal001
+ðŸ‘¤ Pagador: Maria da Silva
+ðŸ“„ CPF/CNPJ: 98765432100
+ðŸ”— Link Final: https://ARCKHÉ AI/
+âœ… Status: PAGO
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 ```
 
 **`logs/acessos_portal_legivel.txt`:**
 ```
-─────────────────────────────────────────────────────
-🌐 ACESSO AO PORTAL
-📅 Data/Hora: 12/11/2025, 08:21:20
-🆔 Transação: testeportal001
-💵 Valor: R$ 49.90
-🔗 Portal: https://inema.club/
-🌍 IP: ::1
-─────────────────────────────────────────────────────
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ðŸŒ ACESSO AO PORTAL
+ðŸ“… Data/Hora: 12/11/2025, 08:21:20
+ðŸ†” TransaÃ§Ã£o: testeportal001
+ðŸ’µ Valor: R$ 49.90
+ðŸ”— Portal: https://ARCKHÉ AI/
+ðŸŒ IP: ::1
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 ```
 
 ---
 
-## 🎨 Interface Web
+## ðŸŽ¨ Interface Web
 
-### Tela de Sucesso Após Pagamento
+### Tela de Sucesso ApÃ³s Pagamento
 
-Quando o pagamento é confirmado, a interface mostra:
+Quando o pagamento Ã© confirmado, a interface mostra:
 
-1. **Confirmação de Pagamento:**
-   - ✅ Ícone de sucesso
-   - ID da transação
+1. **ConfirmaÃ§Ã£o de Pagamento:**
+   - âœ… Ãcone de sucesso
+   - ID da transaÃ§Ã£o
    - Valor pago
    - Data e hora
 
 2. **Box do Portal (destaque):**
    - Fundo gradiente azul/roxo
-   - Título: "🎉 Acesso Liberado ao Portal!"
-   - Descrição: "Clique no botão abaixo para acessar o portal Inema Club"
-   - Botão branco estilizado: "🌐 Acessar Portal Inema Club →"
-   - Nota: "O acesso será registrado quando você clicar no link"
+   - TÃ­tulo: "ðŸŽ‰ Acesso Liberado ao Portal!"
+   - DescriÃ§Ã£o: "Clique no botÃ£o abaixo para acessar o portal ARCKHÉ Club"
+   - BotÃ£o branco estilizado: "ðŸŒ Acessar Portal ARCKHÉ Club â†’"
+   - Nota: "O acesso serÃ¡ registrado quando vocÃª clicar no link"
 
 3. **Comportamento ao Clicar:**
    - Registra acesso via API
-   - Mostra notificação: "Abrindo portal..."
+   - Mostra notificaÃ§Ã£o: "Abrindo portal..."
    - Aguarda 500ms
-   - Abre https://inema.club/ em nova aba
+   - Abre https://ARCKHÉ AI/ em nova aba
 
 ---
 
-## 🔍 Monitoramento e Análise
+## ðŸ” Monitoramento e AnÃ¡lise
 
 ### Ver Logs em Tempo Real
 
@@ -238,7 +238,7 @@ wc -l logs/pagamentos.log
 wc -l logs/acessos_portal.log
 ```
 
-### Ver Estatísticas via API
+### Ver EstatÃ­sticas via API
 
 ```bash
 curl http://localhost:3000/internal/statistics | python3 -m json.tool
@@ -246,7 +246,7 @@ curl http://localhost:3000/internal/statistics | python3 -m json.tool
 
 ---
 
-## 📈 Estatísticas Disponíveis
+## ðŸ“ˆ EstatÃ­sticas DisponÃ­veis
 
 O endpoint `/internal/statistics` fornece:
 
@@ -254,21 +254,21 @@ O endpoint `/internal/statistics` fornece:
 - **Total de acessos** ao portal
 - **Valor total** arrecadado
 - **Taxa de acesso** (% de pagantes que acessaram o portal)
-- **Últimos 5 pagamentos** registrados
-- **Últimos 5 acessos** ao portal
+- **Ãšltimos 5 pagamentos** registrados
+- **Ãšltimos 5 acessos** ao portal
 
 ---
 
-## 🧪 Testando o Fluxo Completo
+## ðŸ§ª Testando o Fluxo Completo
 
-### 1. Criar Cobrança
+### 1. Criar CobranÃ§a
 
 ```bash
 curl -X PUT "http://localhost:3000/pix/v2/cob?txid=teste001" \
   -H "Content-Type: application/json" \
   -d '{
     "valor": {"original": "10.00"},
-    "devedor": {"nome": "João Silva", "cpf": "12345678900"},
+    "devedor": {"nome": "JoÃ£o Silva", "cpf": "12345678900"},
     "infoAdicionais": [{"nome": "Produto", "valor": "Acesso Portal"}]
   }'
 ```
@@ -298,47 +298,47 @@ cat logs/pagamentos_legivel.txt
 # Ver acessos
 cat logs/acessos_portal_legivel.txt
 
-# Ver estatísticas
+# Ver estatÃ­sticas
 curl http://localhost:3000/internal/statistics
 ```
 
 ---
 
-## ✨ Recursos Especiais
+## âœ¨ Recursos Especiais
 
 ### 1. Logs Duplos
 
-Cada evento é salvo em **dois formatos**:
+Cada evento Ã© salvo em **dois formatos**:
 - **JSON** para processamento automatizado
-- **Legível** para visualização humana
+- **LegÃ­vel** para visualizaÃ§Ã£o humana
 
-### 2. Informações Completas
+### 2. InformaÃ§Ãµes Completas
 
-Registra não apenas o pagamento, mas também:
+Registra nÃ£o apenas o pagamento, mas tambÃ©m:
 - Quem pagou (nome, CPF/CNPJ)
 - Quando pagou
 - Quando acessou o portal
 - De onde acessou (IP)
 - Com qual dispositivo (User Agent)
 
-### 3. Estatísticas Automáticas
+### 3. EstatÃ­sticas AutomÃ¡ticas
 
-Taxa de conversão calculada automaticamente:
+Taxa de conversÃ£o calculada automaticamente:
 - 100% = todos que pagaram acessaram o portal
-- < 100% = alguns pagaram mas não acessaram
+- < 100% = alguns pagaram mas nÃ£o acessaram
 
 ### 4. Rastreamento Completo
 
-Cada transação pode ser rastreada do início ao fim:
-1. Cobrança criada
-2. Pagamento realizado → **REGISTRADO**
+Cada transaÃ§Ã£o pode ser rastreada do inÃ­cio ao fim:
+1. CobranÃ§a criada
+2. Pagamento realizado â†’ **REGISTRADO**
 3. Link do portal exibido
-4. Usuário clica no link → **REGISTRADO**
+4. UsuÃ¡rio clica no link â†’ **REGISTRADO**
 5. Portal aberto
 
 ---
 
-## 🎯 Casos de Uso
+## ðŸŽ¯ Casos de Uso
 
 ### 1. Auditoria
 
@@ -348,7 +348,7 @@ curl http://localhost:3000/internal/logs/payments
 curl http://localhost:3000/internal/logs/accesses
 ```
 
-### 2. Análise de Conversão
+### 2. AnÃ¡lise de ConversÃ£o
 
 Verificar taxa de acesso:
 ```bash
@@ -356,43 +356,43 @@ curl http://localhost:3000/internal/statistics
 # Olhar o campo "taxa_acesso"
 ```
 
-### 3. Relatórios
+### 3. RelatÃ³rios
 
-Gerar relatórios a partir dos arquivos JSON:
+Gerar relatÃ³rios a partir dos arquivos JSON:
 ```bash
 # Pagamentos do dia
 grep "2025-11-12" logs/pagamentos.log
 
-# Acessos de um usuário específico
+# Acessos de um usuÃ¡rio especÃ­fico
 grep "txid123" logs/acessos_portal.log
 ```
 
 ---
 
-## 🔐 Privacidade e Segurança
+## ðŸ” Privacidade e SeguranÃ§a
 
-- ✅ IPs são registrados apenas para auditoria
-- ✅ Logs armazenados localmente (não enviados externamente)
-- ✅ CPF/CNPJ opcionais
-- ✅ Dados podem ser anonimizados se necessário
-
----
-
-## 📝 Resumo
-
-**O que acontece após o pagamento:**
-
-1. ✅ Pagamento registrado em arquivo
-2. ✅ Link https://inema.club/ liberado e exibido
-3. ✅ Usuário clica no link
-4. ✅ Acesso registrado em arquivo
-5. ✅ Portal aberto em nova aba
-6. ✅ Estatísticas atualizadas automaticamente
-
-**Tudo registrado, rastreado e disponível para análise!** 📊
+- âœ… IPs sÃ£o registrados apenas para auditoria
+- âœ… Logs armazenados localmente (nÃ£o enviados externamente)
+- âœ… CPF/CNPJ opcionais
+- âœ… Dados podem ser anonimizados se necessÃ¡rio
 
 ---
 
-**Status:** ✅ 100% Implementado e Testado
-**Link do Portal:** https://inema.club/
+## ðŸ“ Resumo
+
+**O que acontece apÃ³s o pagamento:**
+
+1. âœ… Pagamento registrado em arquivo
+2. âœ… Link https://ARCKHÉ AI/ liberado e exibido
+3. âœ… UsuÃ¡rio clica no link
+4. âœ… Acesso registrado em arquivo
+5. âœ… Portal aberto em nova aba
+6. âœ… EstatÃ­sticas atualizadas automaticamente
+
+**Tudo registrado, rastreado e disponÃ­vel para anÃ¡lise!** ðŸ“Š
+
+---
+
+**Status:** âœ… 100% Implementado e Testado
+**Link do Portal:** https://ARCKHÉ AI/
 **Logs:** Pasta `/logs` do projeto

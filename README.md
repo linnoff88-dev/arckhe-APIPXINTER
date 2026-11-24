@@ -1,4 +1,4 @@
-﻿# ðŸ¦ Simulador de API Pix - Banco Inter
+# ðŸ¦ Simulador de API Pix - Banco Inter
 
 Ambiente de simulaÃ§Ã£o completo que reproduz o comportamento da **API Pix do Banco Inter** sem necessidade de conta bancÃ¡ria real.
 
@@ -353,4 +353,4 @@ Projeto criado para simular a API Pix do Banco Inter para fins de desenvolviment
 
 ---
 
-Projeto adaptado da comunidade INEMA TDS - Marca Arckhe
+Projeto adaptado da comunidade ARCKHÉ TDS - Marca Arckhe

@@ -9,7 +9,7 @@ const webhookCallbacks = [];
 
 /**
  * POST /internal/simulate-pay
- * Simula o pagamento de uma cobrança
+ * Simula o pagamento de uma cobranÃ§a
  */
 router.post('/internal/simulate-pay', async (req, res) => {
   try {
@@ -17,32 +17,32 @@ router.post('/internal/simulate-pay', async (req, res) => {
 
     if (!txid) {
       return res.status(400).json({
-        error: 'txid é obrigatório',
-        message: 'Informe o txid da cobrança a ser paga'
+        error: 'txid Ã© obrigatÃ³rio',
+        message: 'Informe o txid da cobranÃ§a a ser paga'
       });
     }
 
-    // Buscar cobrança
+    // Buscar cobranÃ§a
     const cobranca = await database.getCobrancaByTxid(txid);
 
     if (!cobranca) {
       return res.status(404).json({
-        error: 'Cobrança não encontrada',
-        message: `Não foi encontrada cobrança com txid: ${txid}`
+        error: 'CobranÃ§a nÃ£o encontrada',
+        message: `NÃ£o foi encontrada cobranÃ§a com txid: ${txid}`
       });
     }
 
     if (cobranca.status === 'PAGA') {
       return res.status(400).json({
-        error: 'Cobrança já paga',
-        message: 'Esta cobrança já foi paga anteriormente'
+        error: 'CobranÃ§a jÃ¡ paga',
+        message: 'Esta cobranÃ§a jÃ¡ foi paga anteriormente'
       });
     }
 
     if (cobranca.status === 'CANCELADA') {
       return res.status(400).json({
-        error: 'Cobrança cancelada',
-        message: 'Não é possível pagar uma cobrança cancelada'
+        error: 'CobranÃ§a cancelada',
+        message: 'NÃ£o Ã© possÃ­vel pagar uma cobranÃ§a cancelada'
       });
     }
 
@@ -52,7 +52,7 @@ router.post('/internal/simulate-pay', async (req, res) => {
       if (valorPagoNum !== cobranca.valor) {
         return res.status(400).json({
           error: 'Valor incorreto',
-          message: `Valor pago (${valorPagoNum}) diferente do valor da cobrança (${cobranca.valor})`
+          message: `Valor pago (${valorPagoNum}) diferente do valor da cobranÃ§a (${cobranca.valor})`
         });
       }
     }
@@ -83,7 +83,7 @@ router.post('/internal/simulate-pay', async (req, res) => {
       nome_pagador: cobranca.nome_pagador,
       cpf_cnpj: cobranca.cpf_cnpj,
       paid_at: new Date(paid_at * 1000).toISOString(),
-      link_final: 'https://inema.club/'
+      link_final: 'https://ARCKHÉ AI/'
     });
 
     res.json({
@@ -93,7 +93,7 @@ router.post('/internal/simulate-pay', async (req, res) => {
       status: 'PAGA',
       valor_pago: cobranca.valor.toFixed(2),
       paid_at: new Date(paid_at * 1000).toISOString(),
-      link_final: 'https://inema.club/',
+      link_final: 'https://ARCKHÉ AI/',
       webhook_triggered: webhookCallbacks.length > 0
     });
 
@@ -108,7 +108,7 @@ router.post('/internal/simulate-pay', async (req, res) => {
 
 /**
  * POST /internal/simulate-cancel
- * Simula o cancelamento de uma cobrança
+ * Simula o cancelamento de uma cobranÃ§a
  */
 router.post('/internal/simulate-cancel', async (req, res) => {
   try {
@@ -116,7 +116,7 @@ router.post('/internal/simulate-cancel', async (req, res) => {
 
     if (!txid) {
       return res.status(400).json({
-        error: 'txid é obrigatório'
+        error: 'txid Ã© obrigatÃ³rio'
       });
     }
 
@@ -124,13 +124,13 @@ router.post('/internal/simulate-cancel', async (req, res) => {
 
     if (!cobranca) {
       return res.status(404).json({
-        error: 'Cobrança não encontrada'
+        error: 'CobranÃ§a nÃ£o encontrada'
       });
     }
 
     if (cobranca.status !== 'ATIVA') {
       return res.status(400).json({
-        error: 'Somente cobranças ATIVAS podem ser canceladas'
+        error: 'Somente cobranÃ§as ATIVAS podem ser canceladas'
       });
     }
 
@@ -138,13 +138,13 @@ router.post('/internal/simulate-cancel', async (req, res) => {
 
     res.json({
       success: true,
-      message: 'Cobrança cancelada com sucesso',
+      message: 'CobranÃ§a cancelada com sucesso',
       txid: cobranca.txid,
       status: 'CANCELADA'
     });
 
   } catch (error) {
-    console.error('Erro ao cancelar cobrança:', error);
+    console.error('Erro ao cancelar cobranÃ§a:', error);
     res.status(500).json({
       error: 'Erro interno',
       message: error.message
@@ -154,10 +154,10 @@ router.post('/internal/simulate-cancel', async (req, res) => {
 
 /**
  * POST /webhook/pix
- * Endpoint para receber webhooks (simulação)
+ * Endpoint para receber webhooks (simulaÃ§Ã£o)
  */
 router.post('/webhook/pix', (req, res) => {
-  console.log('📢 Webhook recebido:', JSON.stringify(req.body, null, 2));
+  console.log('ðŸ“¢ Webhook recebido:', JSON.stringify(req.body, null, 2));
 
   // Registrar callback
   webhookCallbacks.push({
@@ -173,7 +173,7 @@ router.post('/webhook/pix', (req, res) => {
 
 /**
  * GET /webhook/pix/history
- * Histórico de webhooks recebidos
+ * HistÃ³rico de webhooks recebidos
  */
 router.get('/webhook/pix/history', (req, res) => {
   res.json({
@@ -187,7 +187,7 @@ router.get('/webhook/pix/history', (req, res) => {
 
 /**
  * POST /internal/register-portal-access
- * Registra quando o usuário clica no link do portal
+ * Registra quando o usuÃ¡rio clica no link do portal
  */
 router.post('/internal/register-portal-access', async (req, res) => {
   try {
@@ -195,16 +195,16 @@ router.post('/internal/register-portal-access', async (req, res) => {
 
     if (!txid) {
       return res.status(400).json({
-        error: 'txid é obrigatório'
+        error: 'txid Ã© obrigatÃ³rio'
       });
     }
 
-    // Buscar cobrança
+    // Buscar cobranÃ§a
     const cobranca = await database.getCobrancaByTxid(txid);
 
     if (!cobranca) {
       return res.status(404).json({
-        error: 'Cobrança não encontrada'
+        error: 'CobranÃ§a nÃ£o encontrada'
       });
     }
 
@@ -212,7 +212,7 @@ router.post('/internal/register-portal-access', async (req, res) => {
     logPortalAccess({
       txid: cobranca.txid,
       valor: cobranca.valor.toFixed(2),
-      portal_url: 'https://inema.club/',
+      portal_url: 'https://ARCKHÉ AI/',
       ip: req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress,
       user_agent: req.headers['user-agent']
     });
@@ -220,7 +220,7 @@ router.post('/internal/register-portal-access', async (req, res) => {
     res.json({
       success: true,
       message: 'Acesso ao portal registrado',
-      portal_url: 'https://inema.club/'
+      portal_url: 'https://ARCKHÉ AI/'
     });
 
   } catch (error) {
@@ -234,7 +234,7 @@ router.post('/internal/register-portal-access', async (req, res) => {
 
 /**
  * GET /internal/logs/payments
- * Ver últimos pagamentos registrados
+ * Ver Ãºltimos pagamentos registrados
  */
 router.get('/internal/logs/payments', async (req, res) => {
   try {
@@ -256,7 +256,7 @@ router.get('/internal/logs/payments', async (req, res) => {
 
 /**
  * GET /internal/logs/accesses
- * Ver últimos acessos ao portal
+ * Ver Ãºltimos acessos ao portal
  */
 router.get('/internal/logs/accesses', async (req, res) => {
   try {
@@ -278,7 +278,7 @@ router.get('/internal/logs/accesses', async (req, res) => {
 
 /**
  * GET /internal/statistics
- * Ver estatísticas de pagamentos e acessos
+ * Ver estatÃ­sticas de pagamentos e acessos
  */
 router.get('/internal/statistics', async (req, res) => {
   try {
@@ -286,13 +286,13 @@ router.get('/internal/statistics', async (req, res) => {
 
     if (!stats) {
       return res.status(500).json({
-        error: 'Erro ao obter estatísticas'
+        error: 'Erro ao obter estatÃ­sticas'
       });
     }
 
     res.json(stats);
   } catch (error) {
-    console.error('Erro ao obter estatísticas:', error);
+    console.error('Erro ao obter estatÃ­sticas:', error);
     res.status(500).json({
       error: 'Erro interno',
       message: error.message
@@ -301,13 +301,13 @@ router.get('/internal/statistics', async (req, res) => {
 });
 
 /**
- * Função auxiliar para disparar webhook
+ * FunÃ§Ã£o auxiliar para disparar webhook
  */
 async function triggerWebhook(payload) {
-  // Simular disparo de webhook (apenas loga, não envia HTTP request)
-  console.log('🔔 Webhook disparado:', JSON.stringify(payload, null, 2));
+  // Simular disparo de webhook (apenas loga, nÃ£o envia HTTP request)
+  console.log('ðŸ”” Webhook disparado:', JSON.stringify(payload, null, 2));
 
-  // Adicionar ao histórico
+  // Adicionar ao histÃ³rico
   webhookCallbacks.push({
     timestamp: Date.now(),
     payload

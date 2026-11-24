@@ -9,20 +9,20 @@
 <body>
   <div class="container">
     <header>
-      <h1>🏦 Simulador Pix - Banco Inter</h1>
-      <p class="subtitle">Ambiente de teste para cobranças Pix dinâmicas</p>
+      <h1>ðŸ¦ Simulador Pix - Banco Inter</h1>
+      <p class="subtitle">Ambiente de teste para cobranÃ§as Pix dinÃ¢micas</p>
     </header>
 
-    <!-- Tela 1: Formulário de Cadastro -->
+    <!-- Tela 1: FormulÃ¡rio de Cadastro -->
     <div id="screen-form" class="screen active">
       <div class="card">
-        <h2>📝 Criar Nova Cobrança</h2>
+        <h2>ðŸ“ Criar Nova CobranÃ§a</h2>
 
         <form id="cobranca-form">
           <div class="form-group">
-            <label for="txid">ID da Transação (txid) *</label>
+            <label for="txid">ID da TransaÃ§Ã£o (txid) *</label>
             <input type="text" id="txid" required placeholder="Ex: pedido12345">
-            <small>Identificador único da cobrança</small>
+            <small>Identificador Ãºnico da cobranÃ§a</small>
           </div>
 
           <div class="form-group">
@@ -31,13 +31,13 @@
           </div>
 
           <div class="form-group">
-            <label for="descricao">Descrição</label>
+            <label for="descricao">DescriÃ§Ã£o</label>
             <input type="text" id="descricao" placeholder="Ex: Pagamento de produto">
           </div>
 
           <div class="form-group">
             <label for="nome_pagador">Nome do Pagador</label>
-            <input type="text" id="nome_pagador" placeholder="Ex: João Silva">
+            <input type="text" id="nome_pagador" placeholder="Ex: JoÃ£o Silva">
           </div>
 
           <div class="form-group">
@@ -46,35 +46,35 @@
           </div>
 
           <div class="form-group">
-            <label for="expiracao">Expiração (segundos)</label>
+            <label for="expiracao">ExpiraÃ§Ã£o (segundos)</label>
             <input type="number" id="expiracao" value="3600" min="60" placeholder="3600">
-            <small>Tempo até a cobrança expirar (padrão: 1 hora)</small>
+            <small>Tempo atÃ© a cobranÃ§a expirar (padrÃ£o: 1 hora)</small>
           </div>
 
           <div class="form-group">
-            <label for="link_final">Link Final (após pagamento)</label>
+            <label for="link_final">Link Final (apÃ³s pagamento)</label>
             <input type="url" id="link_final" placeholder="https://exemplo.com/sucesso">
-            <small>URL que será liberada após o pagamento</small>
+            <small>URL que serÃ¡ liberada apÃ³s o pagamento</small>
           </div>
 
           <button type="submit" class="btn btn-primary">
-            Criar Cobrança
+            Criar CobranÃ§a
           </button>
         </form>
       </div>
 
       <div class="info-box">
-        <h3>ℹ️ Informações</h3>
+        <h3>â„¹ï¸ InformaÃ§Ãµes</h3>
         <ul>
-          <li>Este é um simulador de API Pix do Banco Inter</li>
-          <li>Nenhum pagamento real será processado</li>
-          <li>Use para testar fluxos de cobrança sem custos</li>
-          <li>O QR Code gerado é apenas para simulação</li>
+          <li>Este Ã© um simulador de API Pix do Banco Inter</li>
+          <li>Nenhum pagamento real serÃ¡ processado</li>
+          <li>Use para testar fluxos de cobranÃ§a sem custos</li>
+          <li>O QR Code gerado Ã© apenas para simulaÃ§Ã£o</li>
         </ul>
       </div>
     </div>
 
-    <!-- Tela 2: Exibição do QR Code -->
+    <!-- Tela 2: ExibiÃ§Ã£o do QR Code -->
     <div id="screen-qrcode" class="screen">
       <div class="card">
         <div class="status-badge status-ativa">
@@ -82,7 +82,7 @@
           <span id="status-text">ATIVA</span>
         </div>
 
-        <h2>🎯 Cobrança Criada com Sucesso!</h2>
+        <h2>ðŸŽ¯ CobranÃ§a Criada com Sucesso!</h2>
 
         <div class="qr-section">
           <img id="qr-image" src="" alt="QR Code" class="qr-code">
@@ -90,7 +90,7 @@
           <div class="cobranca-info">
             <p><strong>ID:</strong> <span id="display-txid"></span></p>
             <p><strong>Valor:</strong> <span id="display-valor"></span></p>
-            <p><strong>Descrição:</strong> <span id="display-descricao"></span></p>
+            <p><strong>DescriÃ§Ã£o:</strong> <span id="display-descricao"></span></p>
           </div>
         </div>
 
@@ -98,16 +98,16 @@
           <label>PIX Copia e Cola</label>
           <div class="copy-box">
             <input type="text" id="pix-copia-cola" readonly>
-            <button onclick="copiarPixCopiaECola()" class="btn-copy">📋 Copiar</button>
+            <button onclick="copiarPixCopiaECola()" class="btn-copy">ðŸ“‹ Copiar</button>
           </div>
         </div>
 
         <div class="action-buttons">
           <button onclick="simularPagamento()" class="btn btn-success" id="btn-pagar">
-            ✅ Simular Pagamento
+            âœ… Simular Pagamento
           </button>
           <button onclick="voltarFormulario()" class="btn btn-secondary">
-            ← Nova Cobrança
+            â† Nova CobranÃ§a
           </button>
         </div>
 
@@ -121,33 +121,33 @@
     <!-- Tela 3: Pagamento Confirmado -->
     <div id="screen-success" class="screen">
       <div class="card success-card">
-        <div class="success-icon">✅</div>
+        <div class="success-icon">âœ…</div>
         <h2>Pagamento Confirmado!</h2>
 
         <div class="success-info">
-          <p><strong>ID da Transação:</strong> <span id="success-txid"></span></p>
+          <p><strong>ID da TransaÃ§Ã£o:</strong> <span id="success-txid"></span></p>
           <p><strong>Valor Pago:</strong> <span id="success-valor"></span></p>
           <p><strong>Data:</strong> <span id="success-data"></span></p>
         </div>
 
         <div id="link-liberado" class="link-box" style="display: none;">
-          <h3>🎉 Acesso Liberado ao Portal!</h3>
-          <p class="portal-info">Clique no botão abaixo para acessar o portal Inema Club</p>
+          <h3>ðŸŽ‰ Acesso Liberado ao Portal!</h3>
+          <p class="portal-info">Clique no botÃ£o abaixo para acessar o portal ARCKHÉ Club</p>
           <a id="link-final-url" href="#" target="_blank" class="btn btn-portal">
-            🌐 Acessar Portal Inema Club →
+            ðŸŒ Acessar Portal ARCKHÉ Club â†’
           </a>
-          <small class="portal-note">O acesso será registrado quando você clicar no link</small>
+          <small class="portal-note">O acesso serÃ¡ registrado quando vocÃª clicar no link</small>
         </div>
 
         <button onclick="voltarFormulario()" class="btn btn-primary">
-          Criar Nova Cobrança
+          Criar Nova CobranÃ§a
         </button>
       </div>
     </div>
 
     <footer>
       <p>Simulador Pix - Banco Inter | Ambiente de Testes</p>
-      <p><small>Nenhuma transação real é processada</small></p>
+      <p><small>Nenhuma transaÃ§Ã£o real Ã© processada</small></p>
     </footer>
   </div>
 
