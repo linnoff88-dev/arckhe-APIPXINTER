@@ -1,59 +1,59 @@
-# ðŸŒ Portal ARCKHÉ Club e Sistema de Logs
+# ê°Å¸ÅÂ Portal ARCKHê Club e Sistema de Logs
 
-## âœ… Implementado
+## ê¢Åâ¦ Implementado
 
-Sistema completo de redirecionamento para o portal **ARCKHÉ Club** (https://ARCKHÉ AI/) com registro de pagamentos e acessos em arquivos.
+Sistema completo de redirecionamento para o portal **ARCKHê Club** (https://ARCKHê AI/) com registro de pagamentos e acessos em arquivos.
 
 ---
 
-## ðŸŽ¯ Funcionalidades Implementadas
+## ê°Å¸Å½Â¯ Funcionalidades Implementadas
 
-### 1. ðŸ”— Link do Portal ApÃ³s Pagamento
+### 1. ê°Å¸ââ Link do Portal ApêÂ³s Pagamento
 
-Quando um pagamento Ã© confirmado:
-- âœ… Aparece automaticamente o link para **https://ARCKHÉ AI/**
-- âœ… BotÃ£o destacado e atrativo com design profissional
-- âœ… Texto: "ðŸŽ‰ Acesso Liberado ao Portal! ðŸŒ Acessar Portal ARCKHÉ Club"
+Quando um pagamento êÂ© confirmado:
+- ê¢Åâ¦ Aparece automaticamente o link para **https://ARCKHê AI/**
+- ê¢Åâ¦ BotêÂ£o destacado e atrativo com design profissional
+- ê¢Åâ¦ Texto: "ê°Å¸Å½â° Acesso Liberado ao Portal! ê°Å¸ÅÂ Acessar Portal ARCKHê Club"
 
-### 2. ðŸ“ Registro de Pagamentos
+### 2. ê°Å¸âÂ Registro de Pagamentos
 
-Todos os pagamentos sÃ£o automaticamente salvos em arquivos:
+Todos os pagamentos sêÂ£o automaticamente salvos em arquivos:
 
 **Arquivos criados:**
 - `logs/pagamentos.log` - JSON estruturado (para processamento)
-- `logs/pagamentos_legivel.txt` - Formato legÃ­vel (para humanos)
+- `logs/pagamentos_legivel.txt` - Formato legêÂ­vel (para humanos)
 
 **Dados registrados:**
-- ðŸ“… Data e hora do pagamento
-- ðŸ’µ Valor pago
-- ðŸ†” ID da transaÃ§Ã£o (txid)
-- ðŸ‘¤ Nome do pagador
-- ðŸ“„ CPF/CNPJ
-- ðŸ”— Link final liberado
-- âœ… Status do pagamento
+- ê°Å¸ââ¦ Data e hora do pagamento
+- ê°Å¸âÂµ Valor pago
+- ê°Å¸â â ID da transaêÂ§êÂ£o (txid)
+- ê°Å¸âÂ¤ Nome do pagador
+- ê°Å¸ââ CPF/CNPJ
+- ê°Å¸ââ Link final liberado
+- ê¢Åâ¦ Status do pagamento
 
-### 3. ðŸŒ Registro de Acessos ao Portal
+### 3. ê°Å¸ÅÂ Registro de Acessos ao Portal
 
-Quando o usuÃ¡rio clica no link do portal:
-- âœ… Acesso Ã© registrado antes de abrir o link
-- âœ… Portal abre em nova aba automaticamente
-- âœ… NotificaÃ§Ã£o visual "Abrindo portal..."
+Quando o usuêÂ¡rio clica no link do portal:
+- ê¢Åâ¦ Acesso êÂ© registrado antes de abrir o link
+- ê¢Åâ¦ Portal abre em nova aba automaticamente
+- ê¢Åâ¦ NotificaêÂ§êÂ£o visual "Abrindo portal..."
 
 **Arquivos criados:**
 - `logs/acessos_portal.log` - JSON estruturado
-- `logs/acessos_portal_legivel.txt` - Formato legÃ­vel
+- `logs/acessos_portal_legivel.txt` - Formato legêÂ­vel
 
 **Dados registrados:**
-- ðŸ“… Data e hora do acesso
-- ðŸ†” ID da transaÃ§Ã£o
-- ðŸ’µ Valor pago
-- ðŸ”— URL do portal (https://ARCKHÉ AI/)
-- ðŸŒ EndereÃ§o IP do usuÃ¡rio
-- ðŸ’» User Agent (navegador/dispositivo)
+- ê°Å¸ââ¦ Data e hora do acesso
+- ê°Å¸â â ID da transaêÂ§êÂ£o
+- ê°Å¸âÂµ Valor pago
+- ê°Å¸ââ URL do portal (https://ARCKHê AI/)
+- ê°Å¸ÅÂ EndereêÂ§o IP do usuêÂ¡rio
+- ê°Å¸âÂ» User Agent (navegador/dispositivo)
 
 ---
 
-## ðŸ“Š Novos Endpoints da API
+## ê°Å¸âÅ  Novos Endpoints da API
 
 ### 1. Registrar Acesso ao Portal
 
@@ -71,7 +71,7 @@ Content-Type: application/json
 {
   "success": true,
   "message": "Acesso ao portal registrado",
-  "portal_url": "https://ARCKHÉ AI/"
+  "portal_url": "https://ARCKHê AI/"
 }
 ```
 
@@ -94,7 +94,7 @@ GET /internal/logs/payments?limit=50
       "nome_pagador": "Maria da Silva",
       "cpf_cnpj": "98765432100",
       "paid_at": "2025-11-12T11:20:58.000Z",
-      "link_final": "https://ARCKHÉ AI/"
+      "link_final": "https://ARCKHê AI/"
     }
   ]
 }
@@ -116,7 +116,7 @@ GET /internal/logs/accesses?limit=50
       "tipo": "ACESSO_PORTAL",
       "txid": "testeportal001",
       "valor": "49.90",
-      "portal_url": "https://ARCKHÉ AI/",
+      "portal_url": "https://ARCKHê AI/",
       "ip": "::1",
       "user_agent": "Mozilla/5.0..."
     }
@@ -124,7 +124,7 @@ GET /internal/logs/accesses?limit=50
 }
 ```
 
-### 4. Ver EstatÃ­sticas
+### 4. Ver EstatêÂ­sticas
 
 ```bash
 GET /internal/statistics
@@ -144,77 +144,77 @@ GET /internal/statistics
 
 ---
 
-## ðŸ“ Estrutura de Arquivos de Log
+## ê°Å¸âÂ Estrutura de Arquivos de Log
 
 ### Formato JSON (processamento automatizado)
 
 **`logs/pagamentos.log`:**
 ```json
-{"timestamp":"2025-11-12T11:20:58.961Z","tipo":"PAGAMENTO_CONFIRMADO","txid":"testeportal001","valor":"49.90","nome_pagador":"Maria da Silva","cpf_cnpj":"98765432100","paid_at":"2025-11-12T11:20:58.000Z","link_final":"https://ARCKHÉ AI/"}
+{"timestamp":"2025-11-12T11:20:58.961Z","tipo":"PAGAMENTO_CONFIRMADO","txid":"testeportal001","valor":"49.90","nome_pagador":"Maria da Silva","cpf_cnpj":"98765432100","paid_at":"2025-11-12T11:20:58.000Z","link_final":"https://ARCKHê AI/"}
 ```
 
 **`logs/acessos_portal.log`:**
 ```json
-{"timestamp":"2025-11-12T11:21:20.604Z","tipo":"ACESSO_PORTAL","txid":"testeportal001","valor":"49.90","portal_url":"https://ARCKHÉ AI/","ip":"::1","user_agent":"curl/8.5.0"}
+{"timestamp":"2025-11-12T11:21:20.604Z","tipo":"ACESSO_PORTAL","txid":"testeportal001","valor":"49.90","portal_url":"https://ARCKHê AI/","ip":"::1","user_agent":"curl/8.5.0"}
 ```
 
-### Formato LegÃ­vel (visualizaÃ§Ã£o humana)
+### Formato LegêÂ­vel (visualizaêÂ§êÂ£o humana)
 
 **`logs/pagamentos_legivel.txt`:**
 ```
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-ðŸ“… Data/Hora: 12/11/2025, 08:20:58
-ðŸ’µ Valor: R$ 49.90
-ðŸ†” ID TransaÃ§Ã£o: testeportal001
-ðŸ‘¤ Pagador: Maria da Silva
-ðŸ“„ CPF/CNPJ: 98765432100
-ðŸ”— Link Final: https://ARCKHÉ AI/
-âœ… Status: PAGO
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+ê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Â
+ê°Å¸ââ¦ Data/Hora: 12/11/2025, 08:20:58
+ê°Å¸âÂµ Valor: R$ 49.90
+ê°Å¸â â ID TransaêÂ§êÂ£o: testeportal001
+ê°Å¸âÂ¤ Pagador: Maria da Silva
+ê°Å¸ââ CPF/CNPJ: 98765432100
+ê°Å¸ââ Link Final: https://ARCKHê AI/
+ê¢Åâ¦ Status: PAGO
+ê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Âê¢â¢Â
 ```
 
 **`logs/acessos_portal_legivel.txt`:**
 ```
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ðŸŒ ACESSO AO PORTAL
-ðŸ“… Data/Hora: 12/11/2025, 08:21:20
-ðŸ†” TransaÃ§Ã£o: testeportal001
-ðŸ’µ Valor: R$ 49.90
-ðŸ”— Portal: https://ARCKHÉ AI/
-ðŸŒ IP: ::1
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬
+ê°Å¸ÅÂ ACESSO AO PORTAL
+ê°Å¸ââ¦ Data/Hora: 12/11/2025, 08:21:20
+ê°Å¸â â TransaêÂ§êÂ£o: testeportal001
+ê°Å¸âÂµ Valor: R$ 49.90
+ê°Å¸ââ Portal: https://ARCKHê AI/
+ê°Å¸ÅÂ IP: ::1
+ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬ê¢ââ¬
 ```
 
 ---
 
-## ðŸŽ¨ Interface Web
+## ê°Å¸Å½Â¨ Interface Web
 
-### Tela de Sucesso ApÃ³s Pagamento
+### Tela de Sucesso ApêÂ³s Pagamento
 
-Quando o pagamento Ã© confirmado, a interface mostra:
+Quando o pagamento êÂ© confirmado, a interface mostra:
 
-1. **ConfirmaÃ§Ã£o de Pagamento:**
-   - âœ… Ãcone de sucesso
-   - ID da transaÃ§Ã£o
+1. **ConfirmaêÂ§êÂ£o de Pagamento:**
+   - ê¢Åâ¦ êÂcone de sucesso
+   - ID da transaêÂ§êÂ£o
    - Valor pago
    - Data e hora
 
 2. **Box do Portal (destaque):**
    - Fundo gradiente azul/roxo
-   - TÃ­tulo: "ðŸŽ‰ Acesso Liberado ao Portal!"
-   - DescriÃ§Ã£o: "Clique no botÃ£o abaixo para acessar o portal ARCKHÉ Club"
-   - BotÃ£o branco estilizado: "ðŸŒ Acessar Portal ARCKHÉ Club â†’"
-   - Nota: "O acesso serÃ¡ registrado quando vocÃª clicar no link"
+   - TêÂ­tulo: "ê°Å¸Å½â° Acesso Liberado ao Portal!"
+   - DescriêÂ§êÂ£o: "Clique no botêÂ£o abaixo para acessar o portal ARCKHê Club"
+   - BotêÂ£o branco estilizado: "ê°Å¸ÅÂ Acessar Portal ARCKHê Club ê¢â â"
+   - Nota: "O acesso serêÂ¡ registrado quando vocêÂª clicar no link"
 
 3. **Comportamento ao Clicar:**
    - Registra acesso via API
-   - Mostra notificaÃ§Ã£o: "Abrindo portal..."
+   - Mostra notificaêÂ§êÂ£o: "Abrindo portal..."
    - Aguarda 500ms
-   - Abre https://ARCKHÉ AI/ em nova aba
+   - Abre https://ARCKHê AI/ em nova aba
 
 ---
 
-## ðŸ” Monitoramento e AnÃ¡lise
+## ê°Å¸âÂ Monitoramento e AnêÂ¡lise
 
 ### Ver Logs em Tempo Real
 
@@ -238,7 +238,7 @@ wc -l logs/pagamentos.log
 wc -l logs/acessos_portal.log
 ```
 
-### Ver EstatÃ­sticas via API
+### Ver EstatêÂ­sticas via API
 
 ```bash
 curl http://localhost:3000/internal/statistics | python3 -m json.tool
@@ -246,7 +246,7 @@ curl http://localhost:3000/internal/statistics | python3 -m json.tool
 
 ---
 
-## ðŸ“ˆ EstatÃ­sticas DisponÃ­veis
+## ê°Å¸âË EstatêÂ­sticas DisponêÂ­veis
 
 O endpoint `/internal/statistics` fornece:
 
@@ -254,21 +254,21 @@ O endpoint `/internal/statistics` fornece:
 - **Total de acessos** ao portal
 - **Valor total** arrecadado
 - **Taxa de acesso** (% de pagantes que acessaram o portal)
-- **Ãšltimos 5 pagamentos** registrados
-- **Ãšltimos 5 acessos** ao portal
+- **êÅ¡ltimos 5 pagamentos** registrados
+- **êÅ¡ltimos 5 acessos** ao portal
 
 ---
 
-## ðŸ§ª Testando o Fluxo Completo
+## ê°Å¸Â§Âª Testando o Fluxo Completo
 
-### 1. Criar CobranÃ§a
+### 1. Criar CobranêÂ§a
 
 ```bash
 curl -X PUT "http://localhost:3000/pix/v2/cob?txid=teste001" \
   -H "Content-Type: application/json" \
   -d '{
     "valor": {"original": "10.00"},
-    "devedor": {"nome": "JoÃ£o Silva", "cpf": "12345678900"},
+    "devedor": {"nome": "JoêÂ£o Silva", "cpf": "12345678900"},
     "infoAdicionais": [{"nome": "Produto", "valor": "Acesso Portal"}]
   }'
 ```
@@ -298,47 +298,47 @@ cat logs/pagamentos_legivel.txt
 # Ver acessos
 cat logs/acessos_portal_legivel.txt
 
-# Ver estatÃ­sticas
+# Ver estatêÂ­sticas
 curl http://localhost:3000/internal/statistics
 ```
 
 ---
 
-## âœ¨ Recursos Especiais
+## ê¢ÅÂ¨ Recursos Especiais
 
 ### 1. Logs Duplos
 
-Cada evento Ã© salvo em **dois formatos**:
+Cada evento êÂ© salvo em **dois formatos**:
 - **JSON** para processamento automatizado
-- **LegÃ­vel** para visualizaÃ§Ã£o humana
+- **LegêÂ­vel** para visualizaêÂ§êÂ£o humana
 
-### 2. InformaÃ§Ãµes Completas
+### 2. InformaêÂ§êÂµes Completas
 
-Registra nÃ£o apenas o pagamento, mas tambÃ©m:
+Registra nêÂ£o apenas o pagamento, mas tambêÂ©m:
 - Quem pagou (nome, CPF/CNPJ)
 - Quando pagou
 - Quando acessou o portal
 - De onde acessou (IP)
 - Com qual dispositivo (User Agent)
 
-### 3. EstatÃ­sticas AutomÃ¡ticas
+### 3. EstatêÂ­sticas AutomêÂ¡ticas
 
-Taxa de conversÃ£o calculada automaticamente:
+Taxa de conversêÂ£o calculada automaticamente:
 - 100% = todos que pagaram acessaram o portal
-- < 100% = alguns pagaram mas nÃ£o acessaram
+- < 100% = alguns pagaram mas nêÂ£o acessaram
 
 ### 4. Rastreamento Completo
 
-Cada transaÃ§Ã£o pode ser rastreada do inÃ­cio ao fim:
-1. CobranÃ§a criada
-2. Pagamento realizado â†’ **REGISTRADO**
+Cada transaêÂ§êÂ£o pode ser rastreada do inêÂ­cio ao fim:
+1. CobranêÂ§a criada
+2. Pagamento realizado ê¢â â **REGISTRADO**
 3. Link do portal exibido
-4. UsuÃ¡rio clica no link â†’ **REGISTRADO**
+4. UsuêÂ¡rio clica no link ê¢â â **REGISTRADO**
 5. Portal aberto
 
 ---
 
-## ðŸŽ¯ Casos de Uso
+## ê°Å¸Å½Â¯ Casos de Uso
 
 ### 1. Auditoria
 
@@ -348,7 +348,7 @@ curl http://localhost:3000/internal/logs/payments
 curl http://localhost:3000/internal/logs/accesses
 ```
 
-### 2. AnÃ¡lise de ConversÃ£o
+### 2. AnêÂ¡lise de ConversêÂ£o
 
 Verificar taxa de acesso:
 ```bash
@@ -356,43 +356,43 @@ curl http://localhost:3000/internal/statistics
 # Olhar o campo "taxa_acesso"
 ```
 
-### 3. RelatÃ³rios
+### 3. RelatêÂ³rios
 
-Gerar relatÃ³rios a partir dos arquivos JSON:
+Gerar relatêÂ³rios a partir dos arquivos JSON:
 ```bash
 # Pagamentos do dia
 grep "2025-11-12" logs/pagamentos.log
 
-# Acessos de um usuÃ¡rio especÃ­fico
+# Acessos de um usuêÂ¡rio especêÂ­fico
 grep "txid123" logs/acessos_portal.log
 ```
 
 ---
 
-## ðŸ” Privacidade e SeguranÃ§a
+## ê°Å¸âÂ Privacidade e SeguranêÂ§a
 
-- âœ… IPs sÃ£o registrados apenas para auditoria
-- âœ… Logs armazenados localmente (nÃ£o enviados externamente)
-- âœ… CPF/CNPJ opcionais
-- âœ… Dados podem ser anonimizados se necessÃ¡rio
-
----
-
-## ðŸ“ Resumo
-
-**O que acontece apÃ³s o pagamento:**
-
-1. âœ… Pagamento registrado em arquivo
-2. âœ… Link https://ARCKHÉ AI/ liberado e exibido
-3. âœ… UsuÃ¡rio clica no link
-4. âœ… Acesso registrado em arquivo
-5. âœ… Portal aberto em nova aba
-6. âœ… EstatÃ­sticas atualizadas automaticamente
-
-**Tudo registrado, rastreado e disponÃ­vel para anÃ¡lise!** ðŸ“Š
+- ê¢Åâ¦ IPs sêÂ£o registrados apenas para auditoria
+- ê¢Åâ¦ Logs armazenados localmente (nêÂ£o enviados externamente)
+- ê¢Åâ¦ CPF/CNPJ opcionais
+- ê¢Åâ¦ Dados podem ser anonimizados se necessêÂ¡rio
 
 ---
 
-**Status:** âœ… 100% Implementado e Testado
-**Link do Portal:** https://ARCKHÉ AI/
+## ê°Å¸âÂ Resumo
+
+**O que acontece apêÂ³s o pagamento:**
+
+1. ê¢Åâ¦ Pagamento registrado em arquivo
+2. ê¢Åâ¦ Link https://ARCKHê AI/ liberado e exibido
+3. ê¢Åâ¦ UsuêÂ¡rio clica no link
+4. ê¢Åâ¦ Acesso registrado em arquivo
+5. ê¢Åâ¦ Portal aberto em nova aba
+6. ê¢Åâ¦ EstatêÂ­sticas atualizadas automaticamente
+
+**Tudo registrado, rastreado e disponêÂ­vel para anêÂ¡lise!** ê°Å¸âÅ 
+
+---
+
+**Status:** ê¢Åâ¦ 100% Implementado e Testado
+**Link do Portal:** https://ARCKHê AI/
 **Logs:** Pasta `/logs` do projeto

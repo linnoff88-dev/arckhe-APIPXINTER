@@ -50,7 +50,7 @@ app.get('/api', (req, res) => {
         'POST /internal/simulate-cancel': 'Simular cancelamento de cobrança'
       },
       webhook: {
-        'POST /webhook/pix': 'Receber notificação de webhook',
+        'POST /webhook/pix': 'Receber notificaçêo de webhook',
         'GET /webhook/pix/history': 'Histórico de webhooks recebidos'
       }
     },
@@ -69,7 +69,7 @@ app.get('/health', (req, res) => {
 // 404 handler para rotas de API
 app.use('/api/*', (req, res) => {
   res.status(404).json({
-    error: 'Endpoint não encontrado',
+    error: 'Endpoint nêo encontrado',
     path: req.path
   });
 });

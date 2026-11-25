@@ -426,7 +426,7 @@ footer p {
   }
 }
 
-/* Animação de erro */
+/* Animaçêo de erro */
 .shake {
   animation: shake 0.5s;
 }
@@ -437,7 +437,7 @@ footer p {
   75% { transform: translateX(10px); }
 }
 
-/* Toast de notificação */
+/* Toast de notificaçêo */
 .toast {
   position: fixed;
   top: 20px;

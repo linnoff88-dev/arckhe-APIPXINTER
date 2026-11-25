@@ -7,7 +7,7 @@ const router = express.Router();
 
 /**
  * POST /auth/token
- * Gera token mock (simulação)
+ * Gera token mock (simulaçêo)
  */
 router.post('/auth/token', (req, res) => {
   res.json({
@@ -131,8 +131,8 @@ router.get('/pix/v2/cob/:txid', async (req, res) => {
 
     if (!cobranca) {
       return res.status(404).json({
-        error: 'Cobrança não encontrada',
-        message: `Não foi encontrada cobrança com txid: ${txid}`
+        error: 'Cobrança nêo encontrada',
+        message: `Nêo foi encontrada cobrança com txid: ${txid}`
       });
     }
 
@@ -185,8 +185,8 @@ router.get('/pix/v2/loc/:id', async (req, res) => {
 
     if (!cobranca) {
       return res.status(404).json({
-        error: 'Location não encontrado',
-        message: `Não foi encontrado location com id: ${id}`
+        error: 'Location nêo encontrado',
+        message: `Nêo foi encontrado location com id: ${id}`
       });
     }
 

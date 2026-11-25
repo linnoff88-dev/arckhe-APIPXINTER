@@ -23,10 +23,10 @@ Abra no navegador: **http://localhost:3000**
 ## 📱 Usando a Interface Web
 
 1. **Preencha o formulário:**
-   - ID da Transação: `pedido001`
+   - ID da Transaçêo: `pedido001`
    - Valor: `29.90`
-   - Descrição: `Teste de cobrança`
-   - (Outros campos são opcionais)
+   - Descriçêo: `Teste de cobrança`
+   - (Outros campos sêo opcionais)
 
 2. **Clique em "Criar Cobrança"**
    - Veja o QR Code gerado
@@ -34,7 +34,7 @@ Abra no navegador: **http://localhost:3000**
 
 3. **Clique em "Simular Pagamento"**
    - Aguarde 2 segundos
-   - Veja confirmação de pagamento
+   - Veja confirmaçêo de pagamento
 
 4. **Pronto!** 🎉
    - Status muda para PAGA
@@ -75,12 +75,12 @@ curl http://localhost:3000/pix/v2/cob/teste001
 
 ## 📊 Endpoints Principais
 
-| Método | Endpoint | Descrição |
+| Método | Endpoint | Descriçêo |
 |--------|----------|-----------|
 | `PUT` | `/pix/v2/cob?txid=XXX` | Criar cobrança |
 | `GET` | `/pix/v2/cob/:txid` | Consultar cobrança |
 | `POST` | `/internal/simulate-pay` | Simular pagamento |
-| `GET` | `/api` | Ver documentação API |
+| `GET` | `/api` | Ver documentaçêo API |
 | `GET` | `/health` | Health check |
 
 ---
@@ -103,7 +103,7 @@ curl http://localhost:3000/pix/v2/cob/teste001
   "valor": {"original": "99.90"},
   "calendario": {"expiracao": 7200},
   "devedor": {
-    "nome": "João da Silva",
+    "nome": "Joêo da Silva",
     "cpf": "12345678900"
   },
   "infoAdicionais": [
@@ -124,11 +124,11 @@ Altere a porta:
 PORT=3001 npm start
 ```
 
-### Banco não inicializa?
+### Banco nêo inicializa?
 
 Verifique permissões na pasta `data/`
 
-### API não responde?
+### API nêo responde?
 
 Verifique se o servidor está rodando:
 ```bash
@@ -137,9 +137,9 @@ curl http://localhost:3000/health
 
 ---
 
-## 📚 Documentação Completa
+## 📚 Documentaçêo Completa
 
-Veja **README.md** para documentação detalhada.
+Veja **README.md** para documentaçêo detalhada.
 
 ---
 

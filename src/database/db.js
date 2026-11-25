@@ -7,7 +7,7 @@ const __dirname = dirname(__filename);
 
 const dbPath = join(__dirname, '../../data/cobrancas.db');
 
-// Criar conexão com o banco
+// Criar conexêo com o banco
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error('❌ Erro ao conectar com o banco de dados:', err.message);
@@ -127,11 +127,11 @@ export const database = {
     });
   },
 
-  // Fechar conexão
+  // Fechar conexêo
   close: () => {
     db.close((err) => {
       if (err) console.error('❌ Erro ao fechar banco:', err.message);
-      else console.log('✅ Conexão com banco fechada');
+      else console.log('✅ Conexêo com banco fechada');
     });
   }
 };

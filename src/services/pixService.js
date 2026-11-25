@@ -2,10 +2,10 @@ import QRCode from 'qrcode';
 
 /**
  * Gera o payload PIX (Copia e Cola) no formato EMV
- * Este é um payload simplificado para simulação
+ * Este é um payload simplificado para simulaçêo
  */
 export function generatePixPayload(txid, valor, descricao = 'Cobranca Pix') {
-  // Campos do payload EMV Pix (simplificado para simulação)
+  // Campos do payload EMV Pix (simplificado para simulaçêo)
   const payload = [
     '000201', // Payload Format Indicator
     '010212', // Point of Initiation Method (dinâmico)
@@ -37,8 +37,8 @@ export function generatePixPayload(txid, valor, descricao = 'Cobranca Pix') {
     '6304' // CRC placeholder
   ].join('');
 
-  // Calcular CRC16 (simplificado para simulação - usa checksum fixo)
-  const crc = 'ABCD'; // Em produção real, deve usar CRC16-CCITT
+  // Calcular CRC16 (simplificado para simulaçêo - usa checksum fixo)
+  const crc = 'ABCD'; // Em produçêo real, deve usar CRC16-CCITT
 
   return payload + crc;
 }

@@ -9,7 +9,7 @@ const logsDir = path.join(__dirname, '../../logs');
 const paymentsLogFile = path.join(logsDir, 'pagamentos.log');
 const accessLogFile = path.join(logsDir, 'acessos_portal.log');
 
-// Criar diretório de logs se não existir
+// Criar diretório de logs se nêo existir
 if (!fs.existsSync(logsDir)) {
   fs.mkdirSync(logsDir, { recursive: true });
   console.log('✅ Diretório de logs criado');
@@ -31,8 +31,8 @@ export function logPayment(paymentData) {
     tipo: 'PAGAMENTO_CONFIRMADO',
     txid: paymentData.txid,
     valor: paymentData.valor_pago,
-    nome_pagador: paymentData.nome_pagador || 'Não informado',
-    cpf_cnpj: paymentData.cpf_cnpj || 'Não informado',
+    nome_pagador: paymentData.nome_pagador || 'Nêo informado',
+    cpf_cnpj: paymentData.cpf_cnpj || 'Nêo informado',
     paid_at: paymentData.paid_at,
     link_final: paymentData.link_final || 'N/A'
   };
@@ -47,12 +47,12 @@ export function logPayment(paymentData) {
     }
   });
 
-  // Também criar uma versão legível
+  // Também criar uma versêo legível
   const readableLog = `
 ═══════════════════════════════════════════════════
 📅 Data/Hora: ${new Date(logEntry.timestamp).toLocaleString('pt-BR')}
 💵 Valor: R$ ${logEntry.valor}
-🆔 ID Transação: ${logEntry.txid}
+🆔 ID Transaçêo: ${logEntry.txid}
 👤 Pagador: ${logEntry.nome_pagador}
 📄 CPF/CNPJ: ${logEntry.cpf_cnpj}
 🔗 Link Final: ${logEntry.link_final}
@@ -92,12 +92,12 @@ export function logPortalAccess(accessData) {
     }
   });
 
-  // Versão legível
+  // Versêo legível
   const readableLog = `
 ─────────────────────────────────────────────────────
 🌐 ACESSO AO PORTAL
 📅 Data/Hora: ${new Date(logEntry.timestamp).toLocaleString('pt-BR')}
-🆔 Transação: ${logEntry.txid}
+🆔 Transaçêo: ${logEntry.txid}
 💵 Valor: R$ ${logEntry.valor}
 🔗 Portal: ${logEntry.portal_url}
 🌍 IP: ${logEntry.ip}
@@ -120,7 +120,7 @@ export function getRecentPayments(limit = 10) {
     fs.readFile(paymentsLogFile, 'utf8', (err, data) => {
       if (err) {
         if (err.code === 'ENOENT') {
-          resolve([]); // Arquivo não existe ainda
+          resolve([]); // Arquivo nêo existe ainda
         } else {
           reject(err);
         }

@@ -1,10 +1,10 @@
-# Relatório de Instrução -- Simulador Pix (Banco Inter)
+# Relatório de Instruçêo -- Simulador Pix (Banco Inter)
 
 ## 🎯 Objetivo
 
-Criar um ambiente de simulação que reproduz o comportamento da **API Pix
+Criar um ambiente de simulaçêo que reproduz o comportamento da **API Pix
 do Banco Inter** (cobrança via `txid`, QR dinâmico, webhook de
-confirmação) sem conta bancária, e também uma interface web para
+confirmaçêo) sem conta bancária, e também uma interface web para
 cadastrar cobranças, gerar QR, simular pagamento e liberar um link.
 
 ------------------------------------------------------------------------
@@ -13,17 +13,17 @@ cadastrar cobranças, gerar QR, simular pagamento e liberar um link.
 
 Componentes principais:
 
-1.  **Frontend Web** -- formulário de cadastro e exibição do QR.\
+1.  **Frontend Web** -- formulário de cadastro e exibiçêo do QR.\
 2.  **Backend API simulador** -- reproduz os endpoints do Banco Inter.\
 3.  **Banco de dados local** -- armazena cobranças (`txid`, valor,
     status, QR etc.).\
-4.  **Serviço de simulação de liquidação** -- marca pagamentos como
+4.  **Serviço de simulaçêo de liquidaçêo** -- marca pagamentos como
     realizados.\
 5.  **Gerador de QR** -- cria imagens a partir do payload Pix.\
-6.  **Webhook receptor** -- simula notificação automática de pagamento.
+6.  **Webhook receptor** -- simula notificaçêo automática de pagamento.
 
-**Fluxo:** cadastro → criação da cobrança → exibição do QR → simulação
-de pagamento → webhook → liberação do link.
+**Fluxo:** cadastro → criaçêo da cobrança → exibiçêo do QR → simulaçêo
+de pagamento → webhook → liberaçêo do link.
 
 ------------------------------------------------------------------------
 
@@ -31,7 +31,7 @@ de pagamento → webhook → liberação do link.
 
 Tabela `cobrancas`:
 
-  Campo                  Tipo        Descrição
+  Campo                  Tipo        Descriçêo
   ---------------------- ----------- ------------------------------
   id                     UUID        Identificador interno
   txid                   String      ID único da cobrança
@@ -40,7 +40,7 @@ Tabela `cobrancas`:
   pixCopiaECola          Text        Payload EMV Pix
   qrCodeBase64           Text        QR gerado (imagem base64)
   link_final             String      URL liberada após pagamento
-  created_at / paid_at   Timestamp   Datas de criação e pagamento
+  created_at / paid_at   Timestamp   Datas de criaçêo e pagamento
 
 ------------------------------------------------------------------------
 
@@ -48,13 +48,13 @@ Tabela `cobrancas`:
 
 Endpoints principais:
 
-  Método   Endpoint                   Função
+  Método   Endpoint                   Funçêo
   -------- -------------------------- -------------------------
   `POST`   `/auth/token`              Gera token mock
   `PUT`    `/pix/v2/cob?txid=`        Cria cobrança
   `GET`    `/pix/v2/loc/{id}`         Consulta cobrança
   `POST`   `/internal/simulate-pay`   Simula pagamento
-  `POST`   `/webhook/pix`             Endpoint de notificação
+  `POST`   `/webhook/pix`             Endpoint de notificaçêo
 
 Exemplo de resposta `/pix/v2/cob`:
 
@@ -74,26 +74,26 @@ Exemplo de resposta `/pix/v2/cob`:
 
 ### 1. Cadastro
 
-Campos: valor, descrição, nome do pagador, CPF/CNPJ, expiração, link
+Campos: valor, descriçêo, nome do pagador, CPF/CNPJ, expiraçêo, link
 final.\
 Ao salvar → chama `/pix/v2/cob?txid=` → abre tela de QR.
 
 ### 2. Tela do QR
 
 Mostra o QR, código copia-e-cola e status `ATIVA`.\
-Botão "Simular Pagamento" chama `/internal/simulate-pay`.
+Botêo "Simular Pagamento" chama `/internal/simulate-pay`.
 
-### 3. Aguardando confirmação
+### 3. Aguardando confirmaçêo
 
 Status muda para `PAGA` após webhook → exibe **link_final** liberado.
 
 ------------------------------------------------------------------------
 
-## 🔄 Simulação de Liquidação
+## 🔄 Simulaçêo de Liquidaçêo
 
-A liquidação pode ser feita de três modos:
+A liquidaçêo pode ser feita de três modos:
 
-1.  **Manual:** botão "Simular Pagamento" no front.\
+1.  **Manual:** botêo "Simular Pagamento" no front.\
 2.  **Automático:** job interno que paga após X minutos.\
 3.  **Externo:** `POST /internal/simulate-pay` com corpo:
 
@@ -105,15 +105,15 @@ A liquidação pode ser feita de três modos:
 
 ## 🔒 Segurança e Boas Práticas
 
--   Não usar credenciais reais.\
+-   Nêo usar credenciais reais.\
 -   Proteger interface com senha se publicada.\
 -   Usar QR falso ou valores pequenos (ex.: R\$0,01).\
 -   Registrar logs e status no banco.\
--   Testar idempotência e expiração.
+-   Testar idempotência e expiraçêo.
 
 ------------------------------------------------------------------------
 
-## 🚀 Migração Futura (Banco Inter real)
+## 🚀 Migraçêo Futura (Banco Inter real)
 
 Para usar a API oficial: 1. Criar conta PJ no Inter.\
 2. Gerar `client_id`, `client_secret` e certificado digital.\
@@ -122,14 +122,14 @@ Para usar a API oficial: 1. Criar conta PJ no Inter.\
 
 ------------------------------------------------------------------------
 
-## ✅ Checklist de Implementação
+## ✅ Checklist de Implementaçêo
 
 -   [x] Endpoint `/pix/v2/cob?txid=` criado\
--   [x] Geração de `pixCopiaECola` e QR Base64\
--   [x] Simulação de pagamento `/internal/simulate-pay`\
+-   [x] Geraçêo de `pixCopiaECola` e QR Base64\
+-   [x] Simulaçêo de pagamento `/internal/simulate-pay`\
 -   [x] Webhook funcional `/webhook/pix`\
--   [x] Atualização automática de status\
--   [x] Liberação de `link_final`
+-   [x] Atualizaçêo automática de status\
+-   [x] Liberaçêo de `link_final`
 
 ------------------------------------------------------------------------
 
@@ -137,5 +137,5 @@ Para usar a API oficial: 1. Criar conta PJ no Inter.\
 
 O simulador permite testar o comportamento de cobrança Pix dinâmica sem
 custos nem riscos.\
-Quando desejar usar a versão real do Banco Inter, basta substituir os
+Quando desejar usar a versêo real do Banco Inter, basta substituir os
 endpoints --- o sistema e a lógica permanecem iguais.

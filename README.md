@@ -1,26 +1,26 @@
-# ðŸ¦ Simulador de API Pix - Banco Inter
+# ê°Å¸ÂÂ¦ Simulador de API Pix - Banco Inter
 
-Ambiente de simulaÃ§Ã£o completo que reproduz o comportamento da **API Pix do Banco Inter** sem necessidade de conta bancÃ¡ria real.
+Ambiente de simulaêÂ§êÂ£o completo que reproduz o comportamento da **API Pix do Banco Inter** sem necessidade de conta bancêÂ¡ria real.
 
-## ðŸŽ¯ CaracterÃ­sticas
+## ê°Å¸Å½Â¯ CaracterêÂ­sticas
 
-- âœ… SimulaÃ§Ã£o completa da API Pix do Banco Inter
-- âœ… CriaÃ§Ã£o de cobranÃ§as Pix dinÃ¢micas com QR Code
-- âœ… GeraÃ§Ã£o de payload EMV (Copia e Cola)
-- âœ… Sistema de webhook para notificaÃ§Ãµes
-- âœ… Interface web amigÃ¡vel
-- âœ… Banco de dados SQLite local
-- âœ… SimulaÃ§Ã£o de pagamento
-- âœ… LiberaÃ§Ã£o de link apÃ³s pagamento
+- ê¢Åâ¦ SimulaêÂ§êÂ£o completa da API Pix do Banco Inter
+- ê¢Åâ¦ CriaêÂ§êÂ£o de cobranêÂ§as Pix dinêÂ¢micas com QR Code
+- ê¢Åâ¦ GeraêÂ§êÂ£o de payload EMV (Copia e Cola)
+- ê¢Åâ¦ Sistema de webhook para notificaêÂ§êÂµes
+- ê¢Åâ¦ Interface web amigêÂ¡vel
+- ê¢Åâ¦ Banco de dados SQLite local
+- ê¢Åâ¦ SimulaêÂ§êÂ£o de pagamento
+- ê¢Åâ¦ LiberaêÂ§êÂ£o de link apêÂ³s pagamento
 
-## ðŸ“‹ Requisitos
+## ê°Å¸ââ¹ Requisitos
 
 - Node.js 18.x ou superior
 - npm ou yarn
 
-## ðŸš€ InstalaÃ§Ã£o e Uso
+## ê°Å¸Å¡â¬ InstalaêÂ§êÂ£o e Uso
 
-### 1. Instalar DependÃªncias
+### 1. Instalar DependêÂªncias
 
 ```bash
 npm install
@@ -32,7 +32,7 @@ npm install
 npm start
 ```
 
-O servidor estarÃ¡ disponÃ­vel em: **http://localhost:3000**
+O servidor estarêÂ¡ disponêÂ­vel em: **http://localhost:3000**
 
 ### 3. Acessar a Interface Web
 
@@ -42,42 +42,42 @@ Abra seu navegador e acesse:
 http://localhost:3000
 ```
 
-## ðŸ–¥ï¸ Interface Web
+## ê°Å¸âÂ¥ê¯Â¸Â Interface Web
 
 A interface web permite:
 
-1. **Criar CobranÃ§a** - Preencher formulÃ¡rio com dados da cobranÃ§a
-2. **Visualizar QR Code** - Ver o QR Code gerado e cÃ³digo copia-e-cola
+1. **Criar CobranêÂ§a** - Preencher formulêÂ¡rio com dados da cobranêÂ§a
+2. **Visualizar QR Code** - Ver o QR Code gerado e cêÂ³digo copia-e-cola
 3. **Simular Pagamento** - Testar o fluxo de pagamento
-4. **Link Liberado** - Ver o link final apÃ³s confirmaÃ§Ã£o
+4. **Link Liberado** - Ver o link final apêÂ³s confirmaêÂ§êÂ£o
 
 ### Fluxo de Uso
 
-1. Preencha o formulÃ¡rio com:
-   - ID da TransaÃ§Ã£o (txid)
+1. Preencha o formulêÂ¡rio com:
+   - ID da TransaêÂ§êÂ£o (txid)
    - Valor
-   - DescriÃ§Ã£o (opcional)
+   - DescriêÂ§êÂ£o (opcional)
    - Nome do Pagador (opcional)
    - CPF/CNPJ (opcional)
-   - ExpiraÃ§Ã£o em segundos (padrÃ£o: 3600)
-   - Link final para liberaÃ§Ã£o (opcional)
+   - ExpiraêÂ§êÂ£o em segundos (padrêÂ£o: 3600)
+   - Link final para liberaêÂ§êÂ£o (opcional)
 
-2. Clique em "Criar CobranÃ§a"
+2. Clique em "Criar CobranêÂ§a"
 
-3. SerÃ¡ exibido:
+3. SerêÂ¡ exibido:
    - QR Code gerado
-   - CÃ³digo PIX Copia e Cola
-   - Status da cobranÃ§a (ATIVA)
+   - CêÂ³digo PIX Copia e Cola
+   - Status da cobranêÂ§a (ATIVA)
 
 4. Clique em "Simular Pagamento"
 
 5. Aguarde processamento e veja:
-   - ConfirmaÃ§Ã£o de pagamento
+   - ConfirmaêÂ§êÂ£o de pagamento
    - Link final liberado (se informado)
 
-## ðŸ”Œ API Endpoints
+## ê°Å¸âÅ API Endpoints
 
-### AutenticaÃ§Ã£o
+### AutenticaêÂ§êÂ£o
 
 #### `POST /auth/token`
 Gera token de acesso (mock)
@@ -91,10 +91,10 @@ Gera token de acesso (mock)
 }
 ```
 
-### CobranÃ§as
+### CobranêÂ§as
 
 #### `PUT /pix/v2/cob?txid={txid}`
-Criar cobranÃ§a Pix
+Criar cobranêÂ§a Pix
 
 **Request:**
 ```json
@@ -103,7 +103,7 @@ Criar cobranÃ§a Pix
     "expiracao": 3600
   },
   "devedor": {
-    "nome": "JoÃ£o Silva",
+    "nome": "JoêÂ£o Silva",
     "cpf": "12345678900"
   },
   "valor": {
@@ -111,7 +111,7 @@ Criar cobranÃ§a Pix
   },
   "infoAdicionais": [
     {
-      "nome": "DescriÃ§Ã£o",
+      "nome": "DescriêÂ§êÂ£o",
       "valor": "Pagamento de produto"
     }
   ],
@@ -132,18 +132,18 @@ Criar cobranÃ§a Pix
 ```
 
 #### `GET /pix/v2/cob/:txid`
-Consultar cobranÃ§a por txid
+Consultar cobranêÂ§a por txid
 
 #### `GET /pix/v2/loc/:id`
-Consultar cobranÃ§a por location ID
+Consultar cobranêÂ§a por location ID
 
 #### `GET /pix/v2/cob`
-Listar todas as cobranÃ§as
+Listar todas as cobranêÂ§as
 
-### SimulaÃ§Ã£o
+### SimulaêÂ§êÂ£o
 
 #### `POST /internal/simulate-pay`
-Simular pagamento de uma cobranÃ§a
+Simular pagamento de uma cobranêÂ§a
 
 **Request:**
 ```json
@@ -168,7 +168,7 @@ Simular pagamento de uma cobranÃ§a
 ```
 
 #### `POST /internal/simulate-cancel`
-Simular cancelamento de cobranÃ§a
+Simular cancelamento de cobranêÂ§a
 
 **Request:**
 ```json
@@ -180,63 +180,63 @@ Simular cancelamento de cobranÃ§a
 ### Webhook
 
 #### `POST /webhook/pix`
-Receber notificaÃ§Ãµes de webhook
+Receber notificaêÂ§êÂµes de webhook
 
 #### `GET /webhook/pix/history`
-Ver histÃ³rico de webhooks recebidos
+Ver histêÂ³rico de webhooks recebidos
 
-## ðŸ“ Estrutura do Projeto
+## ê°Å¸âÂ Estrutura do Projeto
 
 ```
 apipixinter/
-â”œâ”€â”€ data/                      # Banco de dados SQLite
-â”‚   â””â”€â”€ cobrancas.db
-â”œâ”€â”€ doc/                       # DocumentaÃ§Ã£o
-â”‚   â””â”€â”€ Relatorio_Simulador_Pix_BancoInter.md
-â”œâ”€â”€ public/                    # Frontend
-â”‚   â”œâ”€â”€ index.html            # Interface web
-â”‚   â”œâ”€â”€ styles.css            # Estilos
-â”‚   â””â”€â”€ app.js                # LÃ³gica do frontend
-â”œâ”€â”€ src/                       # Backend
-â”‚   â”œâ”€â”€ database/
-â”‚   â”‚   â””â”€â”€ db.js             # ConfiguraÃ§Ã£o do banco
-â”‚   â”œâ”€â”€ routes/
-â”‚   â”‚   â”œâ”€â”€ pixRoutes.js      # Rotas da API Pix
-â”‚   â”‚   â””â”€â”€ simulatorRoutes.js # Rotas de simulaÃ§Ã£o
-â”‚   â”œâ”€â”€ services/
-â”‚   â”‚   â””â”€â”€ pixService.js     # ServiÃ§os Pix (QR, payload)
-â”‚   â””â”€â”€ server.js             # Servidor Express
-â”œâ”€â”€ package.json
-â””â”€â”€ README.md
+ê¢âÅê¢ââ¬ê¢ââ¬ data/                      # Banco de dados SQLite
+ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ cobrancas.db
+ê¢âÅê¢ââ¬ê¢ââ¬ doc/                       # DocumentaêÂ§êÂ£o
+ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ Relatorio_Simulador_Pix_BancoInter.md
+ê¢âÅê¢ââ¬ê¢ââ¬ public/                    # Frontend
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ index.html            # Interface web
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ styles.css            # Estilos
+ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ app.js                # LêÂ³gica do frontend
+ê¢âÅê¢ââ¬ê¢ââ¬ src/                       # Backend
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ database/
+ê¢ââ   ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ db.js             # ConfiguraêÂ§êÂ£o do banco
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ routes/
+ê¢ââ   ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ pixRoutes.js      # Rotas da API Pix
+ê¢ââ   ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ simulatorRoutes.js # Rotas de simulaêÂ§êÂ£o
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ services/
+ê¢ââ   ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ pixService.js     # ServiêÂ§os Pix (QR, payload)
+ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ server.js             # Servidor Express
+ê¢âÅê¢ââ¬ê¢ââ¬ package.json
+ê¢ââê¢ââ¬ê¢ââ¬ README.md
 ```
 
-## ðŸ—„ï¸ Banco de Dados
+## ê°Å¸ââê¯Â¸Â Banco de Dados
 
 O sistema usa SQLite com a seguinte estrutura:
 
 ### Tabela: `cobrancas`
 
-| Campo          | Tipo      | DescriÃ§Ã£o                    |
+| Campo          | Tipo      | DescriêÂ§êÂ£o                    |
 |----------------|-----------|------------------------------|
-| id             | TEXT      | UUID Ãºnico                   |
-| txid           | TEXT      | ID da transaÃ§Ã£o (Ãºnico)      |
-| valor          | REAL      | Valor da cobranÃ§a            |
+| id             | TEXT      | UUID êÂºnico                   |
+| txid           | TEXT      | ID da transaêÂ§êÂ£o (êÂºnico)      |
+| valor          | REAL      | Valor da cobranêÂ§a            |
 | status         | TEXT      | ATIVA, PAGA, CANCELADA       |
-| descricao      | TEXT      | DescriÃ§Ã£o da cobranÃ§a        |
+| descricao      | TEXT      | DescriêÂ§êÂ£o da cobranêÂ§a        |
 | nome_pagador   | TEXT      | Nome do pagador              |
 | cpf_cnpj       | TEXT      | CPF ou CNPJ                  |
-| expiracao      | INTEGER   | Tempo de expiraÃ§Ã£o (seg)     |
+| expiracao      | INTEGER   | Tempo de expiraêÂ§êÂ£o (seg)     |
 | pixCopiaECola  | TEXT      | Payload EMV                  |
 | qrCodeBase64   | TEXT      | QR Code em base64            |
 | location       | TEXT      | URL da location              |
-| link_final     | TEXT      | Link liberado apÃ³s pagamento |
-| created_at     | INTEGER   | Timestamp de criaÃ§Ã£o         |
+| link_final     | TEXT      | Link liberado apêÂ³s pagamento |
+| created_at     | INTEGER   | Timestamp de criaêÂ§êÂ£o         |
 | paid_at        | INTEGER   | Timestamp de pagamento       |
-| updated_at     | INTEGER   | Timestamp de atualizaÃ§Ã£o     |
+| updated_at     | INTEGER   | Timestamp de atualizaêÂ§êÂ£o     |
 
-## ðŸ§ª Testando com cURL
+## ê°Å¸Â§Âª Testando com cURL
 
-### Criar uma cobranÃ§a
+### Criar uma cobranêÂ§a
 
 ```bash
 curl -X PUT "http://localhost:3000/pix/v2/cob?txid=teste123" \
@@ -244,13 +244,13 @@ curl -X PUT "http://localhost:3000/pix/v2/cob?txid=teste123" \
   -d '{
     "valor": {"original": "29.90"},
     "calendario": {"expiracao": 3600},
-    "devedor": {"nome": "JoÃ£o Silva", "cpf": "12345678900"},
-    "infoAdicionais": [{"nome": "DescriÃ§Ã£o", "valor": "Teste"}],
+    "devedor": {"nome": "JoêÂ£o Silva", "cpf": "12345678900"},
+    "infoAdicionais": [{"nome": "DescriêÂ§êÂ£o", "valor": "Teste"}],
     "link_final": "https://exemplo.com/sucesso"
   }'
 ```
 
-### Consultar cobranÃ§a
+### Consultar cobranêÂ§a
 
 ```bash
 curl http://localhost:3000/pix/v2/cob/teste123
@@ -264,17 +264,17 @@ curl -X POST http://localhost:3000/internal/simulate-pay \
   -d '{"txid": "teste123", "valor_pago": "29.90"}'
 ```
 
-## ðŸ”’ SeguranÃ§a
+## ê°Å¸ââ SeguranêÂ§a
 
-Este Ã© um **ambiente de simulaÃ§Ã£o** para testes. RecomendaÃ§Ãµes:
+Este êÂ© um **ambiente de simulaêÂ§êÂ£o** para testes. RecomendaêÂ§êÂµes:
 
-- âš ï¸ NÃƒO usar credenciais reais
-- âš ï¸ NÃƒO processar pagamentos reais
-- âš ï¸ Usar valores pequenos para testes (ex: R$ 0,01)
-- âš ï¸ Proteger com senha se publicado
-- âš ï¸ NÃ£o expor em produÃ§Ã£o
+- ê¢Å¡Â ê¯Â¸Â NêÆO usar credenciais reais
+- ê¢Å¡Â ê¯Â¸Â NêÆO processar pagamentos reais
+- ê¢Å¡Â ê¯Â¸Â Usar valores pequenos para testes (ex: R$ 0,01)
+- ê¢Å¡Â ê¯Â¸Â Proteger com senha se publicado
+- ê¢Å¡Â ê¯Â¸Â NêÂ£o expor em produêÂ§êÂ£o
 
-## ðŸ”„ MigraÃ§Ã£o para API Real
+## ê°Å¸ââ MigraêÂ§êÂ£o para API Real
 
 Para usar a API oficial do Banco Inter:
 
@@ -282,29 +282,29 @@ Para usar a API oficial do Banco Inter:
 2. Gerar `client_id`, `client_secret` e certificado digital
 3. Substituir endpoints mock pelos reais:
    - `https://cdpj.partners.bancointer.com.br`
-4. Implementar autenticaÃ§Ã£o OAuth2
+4. Implementar autenticaêÂ§êÂ£o OAuth2
 5. Configurar webhook real
 6. Manter a estrutura de dados existente
 
-## ðŸ“ Status de CobranÃ§a
+## ê°Å¸âÂ Status de CobranêÂ§a
 
-- **ATIVA** - CobranÃ§a criada e aguardando pagamento
+- **ATIVA** - CobranêÂ§a criada e aguardando pagamento
 - **PAGA** - Pagamento confirmado
-- **CANCELADA** - CobranÃ§a cancelada
+- **CANCELADA** - CobranêÂ§a cancelada
 
-## ðŸŽ¨ Interface
+## ê°Å¸Å½Â¨ Interface
 
 A interface web possui:
 
 - Design responsivo
-- FormulÃ¡rio de cadastro intuitivo
-- ExibiÃ§Ã£o clara do QR Code
-- CÃ³digo copia-e-cola funcional
+- FormulêÂ¡rio de cadastro intuitivo
+- ExibiêÂ§êÂ£o clara do QR Code
+- CêÂ³digo copia-e-cola funcional
 - Feedback visual de status
-- NotificaÃ§Ãµes toast
-- AnimaÃ§Ãµes suaves
+- NotificaêÂ§êÂµes toast
+- AnimaêÂ§êÂµes suaves
 
-## ðŸ› Debug
+## ê°Å¸Ââº Debug
 
 Ver logs do servidor:
 ```bash
@@ -312,45 +312,45 @@ npm start
 ```
 
 Logs incluem:
-- RequisiÃ§Ãµes HTTP
-- CriaÃ§Ã£o de cobranÃ§as
-- SimulaÃ§Ã£o de pagamentos
+- RequisiêÂ§êÂµes HTTP
+- CriaêÂ§êÂ£o de cobranêÂ§as
+- SimulaêÂ§êÂ£o de pagamentos
 - Disparos de webhook
 
-## ðŸ“Š Funcionalidades Implementadas
+## ê°Å¸âÅ  Funcionalidades Implementadas
 
 - [x] Endpoint `/pix/v2/cob?txid=` criado
-- [x] GeraÃ§Ã£o de `pixCopiaECola` e QR Base64
-- [x] SimulaÃ§Ã£o de pagamento `/internal/simulate-pay`
+- [x] GeraêÂ§êÂ£o de `pixCopiaECola` e QR Base64
+- [x] SimulaêÂ§êÂ£o de pagamento `/internal/simulate-pay`
 - [x] Webhook funcional `/webhook/pix`
-- [x] AtualizaÃ§Ã£o automÃ¡tica de status
-- [x] LiberaÃ§Ã£o de `link_final`
+- [x] AtualizaêÂ§êÂ£o automêÂ¡tica de status
+- [x] LiberaêÂ§êÂ£o de `link_final`
 - [x] Interface web completa
 - [x] Banco de dados SQLite
-- [x] Consulta de cobranÃ§as
-- [x] HistÃ³rico de webhooks
+- [x] Consulta de cobranêÂ§as
+- [x] HistêÂ³rico de webhooks
 
-## ðŸ¤ ContribuiÃ§Ã£o
+## ê°Å¸Â¤Â ContribuiêÂ§êÂ£o
 
-Este Ã© um projeto de simulaÃ§Ã£o para testes. Sinta-se livre para:
+Este êÂ© um projeto de simulaêÂ§êÂ£o para testes. Sinta-se livre para:
 
 - Reportar bugs
 - Sugerir melhorias
 - Fazer fork do projeto
 - Adaptar para suas necessidades
 
-## ðŸ“„ LicenÃ§a
+## ê°Å¸ââ LicenêÂ§a
 
 ISC
 
-## ðŸ‘¨â€ðŸ’» Autor
+## ê°Å¸âÂ¨ê¢â¬Âê°Å¸âÂ» Autor
 
 Projeto criado para simular a API Pix do Banco Inter para fins de desenvolvimento e testes.
 
 ---
 
-**âš ï¸ IMPORTANTE:** Este Ã© um simulador para fins educacionais e de teste. NÃ£o processar transaÃ§Ãµes reais.
+**ê¢Å¡Â ê¯Â¸Â IMPORTANTE:** Este êÂ© um simulador para fins educacionais e de teste. NêÂ£o processar transaêÂ§êÂµes reais.
 
 ---
 
-Projeto adaptado da comunidade ARCKHÉ TDS - Marca Arckhe
+Projeto adaptado da comunidade ARCKHê TDS - ARCKHÉe

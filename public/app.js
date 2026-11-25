@@ -1,4 +1,4 @@
-// Estado da aplicação
+// Estado da aplicaçêo
 let currentCobranca = null;
 
 // Elementos DOM
@@ -8,7 +8,7 @@ const screens = {
   success: document.getElementById('screen-success')
 };
 
-// Inicialização
+// Inicializaçêo
 document.addEventListener('DOMContentLoaded', () => {
   setupFormSubmit();
 });
@@ -34,7 +34,7 @@ function setupFormSubmit() {
 
     // Validações
     if (!formData.txid) {
-      showToast('ID da transação é obrigatório', 'error');
+      showToast('ID da transaçêo é obrigatório', 'error');
       return;
     }
 
@@ -71,7 +71,7 @@ async function criarCobranca(formData) {
       chave: 'mock@bancointer.com.br',
       infoAdicionais: [
         {
-          nome: 'Descrição',
+          nome: 'Descriçêo',
           valor: formData.descricao || 'Cobrança Pix'
         }
       ],
@@ -143,7 +143,7 @@ async function simularPagamento() {
     // Aguardar 2 segundos para simular processamento
     await new Promise(resolve => setTimeout(resolve, 2000));
 
-    // Chamar API de simulação
+    // Chamar API de simulaçêo
     const response = await fetch('/internal/simulate-pay', {
       method: 'POST',
       headers: {
@@ -285,7 +285,7 @@ function formatCurrency(value) {
 }
 
 /**
- * Exibir toast de notificação
+ * Exibir toast de notificaçêo
  */
 function showToast(message, type = 'success') {
   // Remover toasts anteriores
